@@ -1,4 +1,4 @@
-# Son Of Anton
+# Son Of Anton 3.0
 An Interpreter for a compact version of Java with shorthand notation similar to Python  
 Named after the single best television character in existence, Bertram Gilfoyle's server, Anton  
   
@@ -6,7 +6,7 @@ Named after the single best television character in existence, Bertram Gilfoyle'
 ----------------------------------------------------------  
 ### Data Types:  
   
-int - whole numbers ranging from { Lower Bound: (-2^31 = 2147483648) | Upper Bound: (2^31)-1 = 2147483647 }  
+int - whole numbers ranging from { Lower Bound: (-2^31 ::=2147483648) | Upper Bound: (2^31)-1 ::= 2147483647 }  
 -> Default Value ::= 0  
 -> **create** **int** (variable-name) ::= whole_number | arithmetic operation | method call with return value: int  
   
@@ -25,4 +25,15 @@ bn - a boolean value {true | false} (int representation: true = 1 | false = 0)
 ----------------------------------------------------------  
 ### Data Type Declaration:  
   
-All variable declarations are denoted by the keyword **create**  
+All variable declarations are denoted/triggered by the keyword **create**  
+
+----------------------------------------------------------  
+### Console Input
+
+All console inputs are denoted/triggered by the keyword **input**  
+
+
+----------------------------------------------------------  
+### Console Output
+
+All console outputs are denoted/triggered by the keyword **output**  

@@ -1,0 +1,19 @@
+- All Classes, Variables, and Methods (regardless of scope are formatted as below)
+- Start and finish of class decleration denoted by line of ""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+[Class Name]:
+---------------------------------------------------------------------------------
+-> [Variable - Scope] [Variable - Modifier] [Variable - Data Type] [Variable - Name]
+---------------------------------------------------------------------------------
+-> [Method - Scope] [Method - Modifier] [Method - Return Type] [Method Name]([Paramter - Data Type] [Paramter - Name])
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+- An example of a correctfully formatted class is below
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
