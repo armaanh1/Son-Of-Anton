@@ -1,2 +1,2 @@
-create int number = 5
-output number
+create String test = hi dad!
+output test 

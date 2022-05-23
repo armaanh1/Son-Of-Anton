@@ -28,11 +28,11 @@ public class SonOfAnton
         this.scanFile = new Scanner(codeFile);
         this.scanInput = new Scanner(System.in);
         this.instructions = new LinkedList<String>();
-        this.declaredStrings = new HashMap<>();
-        this.declardInts = new HashMap<>();
-        this.declardDecimals = new HashMap<>();
-        this.declaredBns = new HashMap<>();
-        this.variableNames = new ArrayList<>();
+        this.declaredStrings = new HashMap<String,String>();
+        this.declardInts = new HashMap<String,Integer>();
+        this.declardDecimals = new HashMap<String,Double>();
+        this.declaredBns = new HashMap<String,Boolean>();
+        this.variableNames = new ArrayList<String>();
 
     }
 
@@ -45,99 +45,131 @@ public class SonOfAnton
         {
 
             currentInstruction = instructions.remove();
-            instructions.remove();
+            System.out.println();
+            System.out.println();
+            System.out.println();
 
             if(currentInstruction.substring(0,6).equals("create"))
             {
 
-                if(currentInstruction.substring(7,11).equals("int"))
+                // System.out.println("CREATE COMMAND DETECTED & EXECUTED IN LINE: " + currentInstruction);
+
+                if(currentInstruction.substring(7,10).equals("int"))
                 {
+
+                    // System.out.println("DATA TYPE INT DETECTED AND EXECUTED IN LINE: " + currentInstruction);
 
                     if((currentInstruction.substring(currentInstruction.indexOf("=")+1).trim()).equals("input"))
                     {
 
+                        // System.out.println("INPUT COMMAND DETECTED & EXECUTED IN LINE: " + currentInstruction);
+
+                        System.out.println("Enter a int value for the variable: " + currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim());
                         declardInts.put
-                        (currentInstruction.substring(11,currentInstruction.indexOf("=")-1), 
+                        (currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim(), 
                         scanInput.nextInt());
-                        variableNames.add(currentInstruction.substring(11,currentInstruction.indexOf("=")-1));
+                        variableNames.add(currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim());
 
                     }
                     else
                     {
 
                         declardInts.put
-                        (currentInstruction.substring(11,currentInstruction.indexOf("=")-1), 
+                        (currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim(), 
                         Integer.parseInt(currentInstruction.substring(currentInstruction.indexOf("=") + 1).trim()));
-                        variableNames.add(currentInstruction.substring(11,currentInstruction.indexOf("=")-1));
+                        variableNames.add(currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim());
+
+                        // System.out.println("INPUT COMMAND NOT DETECTED & REGULAR SUBSTRING IN LINE: " + currentInstruction);
                     
                     }
 
                 }
-                else if(currentInstruction.substring(7,15).equals("decimal"))
+                else if(currentInstruction.substring(7,14).equals("decimal"))
                 {
+
+                    // System.out.println("DATA TYPE DECIMAL DETECTED AND IN LINE: " + currentInstruction);
 
                     if((currentInstruction.substring(currentInstruction.indexOf("=")+1).trim()).equals("input"))
                     {
 
+                        // System.out.println("INPUT COMMAND DETECTED & IN LINE: " + currentInstruction);
+
+                        System.out.println("Enter a decimal value for the variable: " + currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim());
                         declardDecimals.put
-                        (currentInstruction.substring(15,currentInstruction.indexOf("=")-1), 
+                        (currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim(), 
                         scanInput.nextDouble());
-                        variableNames.add(currentInstruction.substring(15,currentInstruction.indexOf("=")-1));
+                        variableNames.add(currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim());
 
                     }
                     else
                     {
                      
+                        // System.out.println("INPUT COMMAND NOT DETECTED & REGULAR SUBSTRING IN LINE: " + currentInstruction);
+
                         declardDecimals.put
-                        (currentInstruction.substring(15,currentInstruction.indexOf("=")-1), 
+                        (currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim(), 
                         Double.parseDouble(currentInstruction.substring(currentInstruction.indexOf("=") + 1).trim()));
-                        variableNames.add(currentInstruction.substring(15,currentInstruction.indexOf("=")-1));
-                   
+                        variableNames.add(currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim());
+
                     }
 
                 }
-                else if(currentInstruction.substring(7,14).equals("String"))
+                else if(currentInstruction.substring(7,13).equals("String"))
                 {
+
+                    // System.out.println("DATA TYPE STRING DETECTED AND IN LINE: " + currentInstruction);
                     
                     if((currentInstruction.substring(currentInstruction.indexOf("=")+1).trim()).equals("input"))
                     {
 
+                        // System.out.println("INPUT COMMAND DETECTED & IN LINE: " + currentInstruction);
+
+                        System.out.println("Enter a String value for the variable: " + currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim());
                         declaredStrings.put
-                        (currentInstruction.substring(14,currentInstruction.indexOf("=")-1), 
+                        (currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim(), 
                         scanInput.nextLine());
-                        variableNames.add(currentInstruction.substring(14,currentInstruction.indexOf("=")-1));
+                        variableNames.add(currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim());
 
                     }
                     else
                     {
-                   
+                        
+                        // System.out.println("INPUT COMMAND NOT DETECTED & REGULAR SUBSTRING IN LINE: " + currentInstruction);
+
                         declaredStrings.put
-                        (currentInstruction.substring(14,currentInstruction.indexOf("=")-1), 
+                        (currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim(), 
                         String.valueOf(currentInstruction.substring(currentInstruction.indexOf("=") + 1).trim()));
-                        variableNames.add(currentInstruction.substring(14,currentInstruction.indexOf("=")-1));
+                        variableNames.add(currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim());
 
                     }
 
                 }
-                else if(currentInstruction.substring(7,10).equals("bn"))
+                else if(currentInstruction.substring(7,9).equals("bn"))
                 {
-                    
+                 
+                    // System.out.println("DATA TYPE bn DETECTED AND IN LINE: " + currentInstruction);
+
                     if((currentInstruction.substring(currentInstruction.indexOf("=")+1).trim()).equals("input"))
                     {
 
+                        // System.out.println("INPUT COMMAND DETECTED & IN LINE: " + currentInstruction);
+
+                        System.out.println("Enter a bn value for the variable: " + currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim());
                         declaredBns.put
-                        (currentInstruction.substring(10,currentInstruction.indexOf("=")-1), 
+                        (currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim(), 
                         scanInput.nextBoolean());
-                        variableNames.add(currentInstruction.substring(10,currentInstruction.indexOf("=")-1));
+                        variableNames.add(currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim());
 
                     }
                     else
                     {
                    
+                        // System.out.println("INPUT COMMAND NOT DETECTED & REGULAR SUBSTRING IN LINE: " + currentInstruction);
+
                         declaredBns.put
-                        (currentInstruction.substring(10,currentInstruction.indexOf("=")-1), 
+                        (currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim(), 
                         Boolean.parseBoolean(currentInstruction.substring(currentInstruction.indexOf("=") + 1).trim()));
-                        variableNames.add(currentInstruction.substring(10,currentInstruction.indexOf("=")-1));
+                        variableNames.add(currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim());
 
                     }
 
@@ -151,10 +183,43 @@ public class SonOfAnton
                 }
 
             }
-            else if(currentInstruction.substring(0,5).equals("output"))
+            else if(currentInstruction.substring(0,6).equals("output"))
             {
 
-                
+                // System.out.println("OUTPUT COMMAND DETECTED & EXECUTED IN LINE: " + currentInstruction);
+
+                if(variableNames.contains(currentInstruction.substring(6).trim()))
+                {
+                 
+                    if(declaredStrings.containsKey(currentInstruction.substring(7)))
+                    {
+
+                        System.out.println(declaredStrings.get(currentInstruction.substring(7)));
+
+                    }
+
+                    if(declaredBns.containsKey(currentInstruction.substring(7)))
+                    {
+                        
+                        System.out.println(declaredBns.get(currentInstruction.substring(7)));
+
+                    }
+                    
+                    if(declardInts.containsKey(currentInstruction.substring(7)))
+                    {
+                        
+                        System.out.println(declardInts.get(currentInstruction.substring(7)));
+
+                    }
+                    
+                    if(declardDecimals.containsKey(currentInstruction.substring(7)))
+                    {
+                        
+                        System.out.println(declardDecimals.get(currentInstruction.substring(7)));
+
+                    }
+
+                }
 
             }
             else if(currentInstruction.substring(0,4).equals("loop"))
@@ -172,10 +237,12 @@ public class SonOfAnton
                 System.out.println("ERROR: VIEW READEME.md FOR MORE INFORMATION ON COMMANDS");
 
             }
+            System.out.println();
+            System.out.println();
 
 
         }    
-    
+        
     }
 
     private void formInstructions()

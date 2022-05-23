@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "**/*.class": true,
+    ".vscode": true,
+    "LICENSE": true,
+    "FutureImplementations.txt": true
+  }
+}
