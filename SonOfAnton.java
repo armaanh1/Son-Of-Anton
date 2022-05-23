@@ -9,16 +9,16 @@ import java.util.Scanner;
 public class SonOfAnton 
 {
 
-    private static File codeFile;
-    private static Queue<String> instructions;
-    private static Scanner scanFile;
-    private static Scanner scanInput;
-    private static HashMap<String, String> declaredStrings;
-    private static HashMap<String, Integer> declardInts;
-    private static HashMap<String, Double> declardDecimals;
-    private static HashMap<String, Boolean> declaredBns;
-    private static String currentInstruction;
-    private static ArrayList<String> variableNames;
+    private File codeFile;
+    private Queue<String> instructions;
+    private Scanner scanFile;
+    private Scanner scanInput;
+    private HashMap<String, String> declaredStrings;
+    private HashMap<String, Integer> declardInts;
+    private HashMap<String, Double> declardDecimals;
+    private HashMap<String, Boolean> declaredBns;
+    private String currentInstruction;
+    private ArrayList<String> variableNames;
 
 
     public SonOfAnton(String codePath) throws FileNotFoundException
@@ -36,7 +36,7 @@ public class SonOfAnton
 
     }
 
-    public static void start() 
+    public void start() 
     {
     
         formInstructions();
@@ -178,7 +178,7 @@ public class SonOfAnton
     
     }
 
-    private static void formInstructions()
+    private void formInstructions()
     {
 
         while (scanFile.hasNext()) 
