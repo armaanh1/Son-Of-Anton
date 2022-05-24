@@ -52,6 +52,11 @@ Loops follow a specific syntax listed below
 ----------------------------------------------------------  
   
 #### For Loops  
-**loop** (variable name) from (begin-index) to (end-index)  
+**loop** (variable name) **from** (begin-index) to (end-index)  
 NOTE: For loops' default increments are (variable-name) = (variable-name) + 1
 NOTE: There is currently no way to change the default increment
+
+#### While Loops
+**loop** (variable name) **while** (bn expression)
+NOTE: While Loops' have no default increment, but instead evaluate a bn expression
+NOTE: While the bn expression evaluates to true, the code within the loop is executed 
