@@ -38,20 +38,31 @@ All console inputs are denoted/triggered by the keyword **input**
 
 ----------------------------------------------------------  
 ----------------------------------------------------------  
-### Console Output
+### Console Output  
 
 All console outputs are denoted/triggered by the keyword **output**  
-
+  
 ----------------------------------------------------------  
 ----------------------------------------------------------  
 ### Loops  
   
 All for and while loops are denoted/triggered by the keyword **loop**  
 Loops follow a specific syntax listed below  
+After the intial loop declaration, each line of instructions should be defined with the keyword instruct  
   
+----------------------------------------------------------  
 ----------------------------------------------------------  
   
 #### For Loops  
-**loop** (variable name) from (begin-index) to (end-index)  
-NOTE: For loops' default increments are (variable-name) = (variable-name) + 1
-NOTE: There is currently no way to change the default increment
+**loop** (variable name) **from** (begin-index) to (end-index)  
+NOTE: For loops' default increments are (variable-name) = (variable-name) + 1  
+NOTE: There is currently no way to change the default increment  
+  
+#### While Loops  
+**loop** **while** (bn expression)  
+NOTE: While Loops' have no default increment, but instead evaluate a bn expression  
+NOTE: While the bn expression evaluates to true, the code within the loop is executed  
+
+#### Infinite Loops
+**loop** **forever**
+NOTE: Infinite Loops

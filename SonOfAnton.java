@@ -41,12 +41,10 @@ public class SonOfAnton
     
         formInstructions();
 
-        while(!instructions.isEmpty())
+        while(!this.instructions.isEmpty())
         {
 
             currentInstruction = instructions.remove();
-            System.out.println();
-            System.out.println();
             System.out.println();
 
             if(currentInstruction.substring(0,6).equals("create"))
@@ -65,9 +63,11 @@ public class SonOfAnton
                         // System.out.println("INPUT COMMAND DETECTED & EXECUTED IN LINE: " + currentInstruction);
 
                         System.out.println("Enter a int value for the variable: " + currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim());
+                        
                         declardInts.put
                         (currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim(), 
                         scanInput.nextInt());
+                        
                         variableNames.add(currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim());
 
                     }
@@ -77,6 +77,7 @@ public class SonOfAnton
                         declardInts.put
                         (currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim(), 
                         Integer.parseInt(currentInstruction.substring(currentInstruction.indexOf("=") + 1).trim()));
+                        
                         variableNames.add(currentInstruction.substring(10,currentInstruction.indexOf("=")-1).trim());
 
                         // System.out.println("INPUT COMMAND NOT DETECTED & REGULAR SUBSTRING IN LINE: " + currentInstruction);
@@ -95,9 +96,11 @@ public class SonOfAnton
                         // System.out.println("INPUT COMMAND DETECTED & IN LINE: " + currentInstruction);
 
                         System.out.println("Enter a decimal value for the variable: " + currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim());
+                        
                         declardDecimals.put
                         (currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim(), 
                         scanInput.nextDouble());
+                        
                         variableNames.add(currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim());
 
                     }
@@ -109,6 +112,7 @@ public class SonOfAnton
                         declardDecimals.put
                         (currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim(), 
                         Double.parseDouble(currentInstruction.substring(currentInstruction.indexOf("=") + 1).trim()));
+                        
                         variableNames.add(currentInstruction.substring(14,currentInstruction.indexOf("=")-1).trim());
 
                     }
@@ -125,9 +129,11 @@ public class SonOfAnton
                         // System.out.println("INPUT COMMAND DETECTED & IN LINE: " + currentInstruction);
 
                         System.out.println("Enter a String value for the variable: " + currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim());
+                        
                         declaredStrings.put
                         (currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim(), 
                         scanInput.nextLine());
+                        
                         variableNames.add(currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim());
 
                     }
@@ -139,6 +145,7 @@ public class SonOfAnton
                         declaredStrings.put
                         (currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim(), 
                         String.valueOf(currentInstruction.substring(currentInstruction.indexOf("=") + 1).trim()));
+                        
                         variableNames.add(currentInstruction.substring(13,currentInstruction.indexOf("=")-1).trim());
 
                     }
@@ -155,9 +162,11 @@ public class SonOfAnton
                         // System.out.println("INPUT COMMAND DETECTED & IN LINE: " + currentInstruction);
 
                         System.out.println("Enter a bn value for the variable: " + currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim());
+                        
                         declaredBns.put
                         (currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim(), 
                         scanInput.nextBoolean());
+                       
                         variableNames.add(currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim());
 
                     }
@@ -169,6 +178,7 @@ public class SonOfAnton
                         declaredBns.put
                         (currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim(), 
                         Boolean.parseBoolean(currentInstruction.substring(currentInstruction.indexOf("=") + 1).trim()));
+                        
                         variableNames.add(currentInstruction.substring(9,currentInstruction.indexOf("=")-1).trim());
 
                     }
@@ -225,6 +235,67 @@ public class SonOfAnton
             else if(currentInstruction.substring(0,4).equals("loop"))
             {
 
+                //loop i from 0 to 5
+                if(currentInstruction.contains("from"))
+                {
+
+                    declardInts.put
+                    (currentInstruction.substring(5, currentInstruction.indexOf("from")).trim(),
+                    Integer.parseInt(currentInstruction.substring(currentInstruction.indexOf("from")+4,
+                    currentInstruction.indexOf("to")-1).trim()));
+
+                    variableNames.add(currentInstruction.substring(5, currentInstruction.indexOf("from")).trim());
+
+                    int endValue = Integer.parseInt(currentInstruction.substring(currentInstruction.indexOf("to")+2).trim());
+                    
+                    int startValue = Integer.parseInt(currentInstruction.substring(currentInstruction.indexOf("from")+4,
+                    currentInstruction.indexOf("to")-1).trim());
+
+                    for(int i = startValue; i < endValue; i++)
+                    {
+
+                        // reference i in exchange with declared variable
+                        // wait for keyword reassign to be pushed and merged with master
+                        // wait for keyword reassign to be pushed and merged with master
+
+                    }
+
+                }
+
+                // 012345678901
+                // loop while (bn expression)
+                else if(currentInstruction.contains("while"))
+                {
+
+                    while(declaredBns.get(currentInstruction.substring(11)))
+                    {
+
+                        // wait for keyword reassign to be pushed and merged with master
+                        // wait for keyword reassign to be pushed and merged with master
+
+                    }
+
+                }
+                else if(currentInstruction.contains("forever"))
+                {
+
+                    while(true)
+                    {
+
+                        // wait for keyword reassign to be pushed and merged with master
+                        // wait for keyword reassign to be pushed and merged with master
+
+                    }
+
+                }
+                else
+                {
+
+                    System.out.println("ERROR: INVALID TYPE OF LOOP; NO TYPE DETECTED");
+                    System.out.println("ERROR: VIEW READEME.md FOR MORE INFORMATION ON LOOPS");
+
+                }
+
             }
             else if(currentInstruction.equals(""))
             {
@@ -237,9 +308,6 @@ public class SonOfAnton
                 System.out.println("ERROR: VIEW READEME.md FOR MORE INFORMATION ON COMMANDS");
 
             }
-            System.out.println();
-            System.out.println();
-
 
         }    
         
@@ -251,7 +319,19 @@ public class SonOfAnton
         while (scanFile.hasNext()) 
         {
             instructions.add(scanFile.nextLine());
-        }        
+        }
+
+        String[] arr = instructions.toArray(new String[instructions.size()]);    
+
+        System.out.println("Instruction Queue:");
+        System.out.println();
+
+        for (int i = 0; i < arr.length; i++) 
+        {
+        
+            System.out.println("Instruction " + (i+1) + ": " + arr[i]);
+
+        }
 
     }
     
