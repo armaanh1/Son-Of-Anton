@@ -8,6 +8,7 @@ public class SonOfAntonLauncher
         
         SonOfAnton soa = new SonOfAnton("Code.txt");
         soa.start();
+        SonOfAnton.start();
 
     }
 
